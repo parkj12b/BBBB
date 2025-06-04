@@ -1,0 +1,25 @@
+{
+  "name": "b-language-support",
+  "displayName": "b-language support",
+  "description": "syntax highlighter for b language described by the Ken Thompson's \"Users' Reference to B\"",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "b",
+      "aliases": ["B", "b"],
+      "extensions": [".b"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "b",
+      "scopeName": "source.b",
+      "path": "./syntaxes/b.tmLanguage.json"
+    }]
+  }
+}
