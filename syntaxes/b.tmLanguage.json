@@ -9,6 +9,9 @@
       "include": "#anon_pattern_1"
     },
     {
+      "include": "#labels"
+    },
+    {
       "include": "#storage_types"
     },
     {
@@ -47,8 +50,20 @@
       "match": "\\b(else|goto|if|return|while)\\b",
       "name": "keyword.control.c"
     },
+    "labels": {
+      "patterns": [
+        {
+          "match": "^\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*:",
+          "captures": {
+            "1": {
+              "name": "entity.name.label.b"
+            }
+          }
+        }
+      ]
+    },
     "b_function_call": {
-      "begin": "(?x)\n(?!(?:switch|case|else|if|while)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+)++\\s*\\(  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(\n)",
+      "begin": "(?x)\n(?!(?:switch|case|else|if|while|return|goto|auto|extrn)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+)++\\s*\\(  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(\n)",
       "beginCaptures": {
         "1": { "name": "entity.name.function.b" }
       },
