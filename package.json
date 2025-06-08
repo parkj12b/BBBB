@@ -3,7 +3,12 @@
   "repository": "https://github.com/parkj12b/BBBB",
   "displayName": "b-language support",
   "description": "syntax highlighter for b language described by the Ken Thompson's \"Users' Reference to B\"",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "publisher": "parkj12b",
+  "author": {
+    "name": "Minseo Park",
+    "email": "p315315@gmail.com"
+  },
   "engines": {
     "vscode": "^1.100.0"
   },
