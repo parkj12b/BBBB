@@ -17,6 +17,6 @@ This extension is still experimental and not thoroughly tested.
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.1
 
 Initial release of B-language-support.
