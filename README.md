@@ -20,3 +20,7 @@ This extension is still experimental and not thoroughly tested.
 ### 0.0.1
 
 Initial release of B-language-support.
+
+### 0.0.2
+
+Added additional keywords, `break` and `continue` to match additional feature in the [B](https://github.com/parkj12b/B) compiler.

@@ -47,7 +47,7 @@
   ],
   "repository": {
     "anon_pattern_1": {
-      "match": "\\b(else|goto|if|return|while)\\b",
+      "match": "\\b(else|goto|if|return|while|continue|break)\\b",
       "name": "keyword.control.c"
     },
     "labels": {
@@ -63,7 +63,7 @@
       ]
     },
     "b_function_call": {
-      "begin": "(?x)\n(?!(?:switch|case|else|if|while|return|goto|auto|extrn)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+)++\\s*\\(  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(\n)",
+      "begin": "(?x)\n(?!(?:switch|case|else|if|while|return|goto|auto|extrn|continue|break)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+)++\\s*\\(  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(\n)",
       "beginCaptures": {
         "1": { "name": "entity.name.function.b" }
       },
@@ -87,7 +87,7 @@
           "include": "#operators"
         },
         {
-          "begin": "(?x)\n(?!(?:extrn|return|switch|case|goto|else|auto|if)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+|::)++  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\n)\n\\s*(\\()",
+          "begin": "(?x)\n(?!(?:extrn|return|switch|case|goto|else|auto|if|continue|break)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+|::)++  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\n)\n\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.c"
@@ -216,7 +216,7 @@
           "include": "#variable_declaration"
         },
         {
-          "match": "\\b(?!(?:auto|extrn|if|else|while|goto|return|case|switch|main)\\b)[a-zA-Z_][a-zA-Z0-9_]*\\b(?!\\s*\\()",
+          "match": "\\b(?!(?:auto|extrn|if|else|while|goto|return|case|switch|main|continue|break)\\b)[a-zA-Z_][a-zA-Z0-9_]*\\b(?!\\s*\\()",
           "name": "variable.other.b"
         }
       ]
@@ -284,7 +284,7 @@
     },
     "function": {
       "name": "meta.function.c",
-      "begin": "(?<!\\w)(?!\\s*(?:extrn|return|switch|case|goto|else|auto|if)\\s*\\()(?=[a-zA-Z_]\\w*\\s*\\()",
+      "begin": "(?<!\\w)(?!\\s*(?:extrn|return|switch|case|goto|else|auto|if|continue|break)\\s*\\()(?=[a-zA-Z_]\\w*\\s*\\()",
       "end": "(?!\\G)(?<=\\))",
       "patterns": [
         {
@@ -313,7 +313,7 @@
         },
         {
           "name": "meta.function.definition.parameters.c",
-          "begin": "(?x)\n(?!(?:auto|extrn|if|else|while|switch|goto|return|case)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+|::)++  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\n)\n\\s*(\\()",
+          "begin": "(?x)\n(?!(?:auto|extrn|if|else|while|switch|goto|return|case|continue|break)\\s*\\()\n(\n(?:[A-Za-z_][A-Za-z0-9_]*+|::)++  # actual name\n|\n(?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\n)\n\\s*(\\()",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.c"
